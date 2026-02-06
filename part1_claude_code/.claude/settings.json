@@ -9,6 +9,10 @@
             "command": "\"$CLAUDE_PROJECT_DIR\"/scripts/check_python.sh",
             "timeout": 30,
             "statusMessage": "Running ruff and py_compile..."
+          },
+          {
+            "type": "prompt",
+            "prompt": "A file was written or edited. If the file is a new or substantially changed Python module, decide whether a pytest test file should be created or updated. If yes, create a test file under tests/ that mirrors the module name. Include at least one basic test that imports the module and checks a simple expected behavior."
           }
         ]
       }
