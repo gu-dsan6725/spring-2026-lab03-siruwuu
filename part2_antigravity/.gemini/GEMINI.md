@@ -1,7 +1,15 @@
-# ML Project - Antigravity Rules
+# Wine Classification ML Project - Antigravity Rules
 
 ## Project Overview
-This project performs exploratory data analysis and builds an XGBoost model using scikit-learn datasets.
+This project builds an end-to-end machine learning pipeline for multiclass classification on the UCI Wine dataset using `sklearn.datasets.load_wine()`.
+
+Goal: classify wines into 3 classes.
+
+Dataset:
+- Source: `sklearn.datasets.load_wine()`
+- Samples: 178
+- Features: 13 numeric features
+- Target: 3 wine classes
 
 ## Coding Standards
 
@@ -32,14 +40,31 @@ logging.basicConfig(
 ```
 
 ### Constants
-- Do not hard-code constants inside functions
-- Declare constants at the top of the file with type annotations
+
+* Do not hard-code constants inside functions
+* Declare constants at the top of the file with type annotations
+
+### Modeling Requirements (Wine Classification)
+
+* Use stratified train/test split
+* Apply StandardScaler (fit on train only, transform train/test)
+* Train an XGBoost classifier for multiclass classification
+* Use 5-fold stratified cross-validation
+* Report:
+
+  * Accuracy
+  * Macro precision, recall, F1
+  * Per-class precision, recall, F1
+  * Confusion matrix
+* Include feature importance ranking and plot
 
 ### After Writing Python Files
-- Always run `uv run ruff check --fix <filename>` after writing Python files
-- Always run `uv run python -m py_compile <filename>` to verify syntax
+
+* Always run `uv run ruff check --fix <filename>`
+* Always run `uv run python -m py_compile <filename>`
 
 ### Output
-- Save plots to the `output/` directory
-- Use `logging.info()` for progress messages
-- Pretty-print dictionaries in log messages using `json.dumps(data, indent=2, default=str)`
+
+* Save plots to the `output/` directory
+* Use `logging.info()` for progress messages
+* Pretty-print dictionaries in log messages using `json.dumps(data, indent=2, default=str)`
